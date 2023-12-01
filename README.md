@@ -11,6 +11,12 @@ S-Lab, Nanyang Technological University
 
 In **European Conference on Computer Vision (ECCV)**, 2022  
 
+## 0. Update
+
+- [2023-04-19] Panorama warping. If you render an object is at the center of the panorama, you can warp the panoramas with warping.py. 
+
+
+
 ## 1. Prerequisites
 - Linux or macOS
 - Python 3
@@ -85,9 +91,8 @@ python test_lighting.py
 ## 5. To-Do
 - [x] Training code
 - [x] Inference model
-- [ ] Evaluation code
-- [ ] Clean Code
-- [ ] Colab Demo
+- [x] Evaluation code
+
 
 
 
