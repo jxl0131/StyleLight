@@ -50,6 +50,9 @@ def pre_process_data(src_file, to_folder, phase, file_txt):
             imsave(os.path.join(dst_folder,one_path.split('/')[-1]), e.data)
 
 ###########
+# to_folder = '/mnt/disks/data/datasets/IndoorHDRDataset2018-debug2-'+str(pano_h)+'x'+str(pano_w)+'-data-splits2/'
+# from_folder = '/mnt/disks/data/datasets/IndoorHDRDataset2018'
+
 to_folder = '/mnt/disks/data/datasets/IndoorHDRDataset2018-debug2-'+str(pano_h)+'x'+str(pano_w)+'-data-splits2/'
 from_folder = '/mnt/disks/data/datasets/IndoorHDRDataset2018'
 

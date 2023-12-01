@@ -27,6 +27,11 @@ conda activate StyleLight
 pip install lpips
 pip install wandb
 conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.2 -c pytorch
+#3090不支持cuda10.2 
+#https://github.com/NVlabs/stylegan2-ada-pytorch#requirements
+改成
+conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.1 -c pytorch -c conda-forge
+
 
 pip install matplotlib
 pip install dlib

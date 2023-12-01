@@ -72,7 +72,8 @@ class MyCoach(BaseCoach):
 
 
             self.restart_training()
-            name = image_name.split('/')[-1].split('.')[0]
+            name = image_name.split('/')[-1]
+            name = name.strip(".jpg") #默认图片是jpg格式
 
             # mask_fname = '/home/deep/projects/mini-stylegan2/crop10.jpg'
             # mask_fname = '/home/deep/projects/mini-stylegan2/crop60.jpg'
@@ -205,7 +206,7 @@ class MyCoach(BaseCoach):
                     img_hdr_np = full.permute(0, 2, 3, 1)[0].detach().cpu().numpy()
 
 
-                imsave(f'{paths_config.checkpoints_dir}/{name}_test.exr', img_hdr_np)
+                imsave(f'{paths_config.checkpoints_dir}/{name}.exr', img_hdr_np)
 
             # save video
             if do_save_image:

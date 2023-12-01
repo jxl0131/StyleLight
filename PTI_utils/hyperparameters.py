@@ -29,19 +29,19 @@ use_last_w_pivots = False    ######
 
 ############### select one of the following options: lighting estimation or lighting editing #############################
 
-###################lighting estimation: fov ldr-> panorama hdr###########################
-# edit = False
-# pt_l2_lambda = 10
-# pt_lpips_lambda = 1
-# regulizer_l2_lambda = 0.01 #org 0.1
-# regulizer_lpips_lambda = 0.01 # org 0.1
-
-################### lighting editing: lighting removal and addition ###########################
-edit = True
-pt_l2_lambda = 1
+##################lighting estimation: fov ldr-> panorama hdr###########################
+edit = False
+pt_l2_lambda = 10
 pt_lpips_lambda = 1
 regulizer_l2_lambda = 0.01 #org 0.1
 regulizer_lpips_lambda = 0.01 # org 0.1
-edit = True
-edit_steps = 20
-percentile = 0.9
+
+# ################### lighting editing: lighting removal and addition ###########################
+# edit = True
+# pt_l2_lambda = 1
+# pt_lpips_lambda = 1
+# regulizer_l2_lambda = 0.01 #org 0.1
+# regulizer_lpips_lambda = 0.01 # org 0.1
+# edit = True
+# edit_steps = 20
+# percentile = 0.9

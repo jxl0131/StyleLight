@@ -47,22 +47,24 @@ class TonemapHDR(object):
 
 tonemap = TonemapHDR(gamma=2.4, percentile=50, max_mapping=0.5)
 
-
+import sys
+sys.path.append('/data/jixinlong/jixinlong/StyleLight')
 import PIL.Image
 from skylibs.hdrio import imread, imsave
 
+if __name__ == '__main__':  
+    image_paths =  glob.glob('/data/jixinlong/jixinlong/datasets/web_hdris_indoor/hdr_pred/*exr')
+    # image_paths = ["/data/jixinlong/jixinlong/datasets/web_hdris_indoor/pana/abandoned_greenhouse.exr"]
+    for img_path in image_paths:
+        # read img
+        img_ = imread(img_path)
+        img, alpha, img_hdr = tonemap(img_)
+        print('alpha:', alpha, img.max(), img_.max(),img_hdr.max()**(1/2.4)-1)
+        # print('alpha:', alpha, img.max(), img_.max(),img_hdr.max())
 
-image_paths =  glob.glob('/home/deep/projects/mini-stylegan2/laval/test/*exr')
-to_path = 'out_test4'
-for img_path in image_paths:
-    # read img
-    img_ = imread(img_path)
-    img, alpha, img_hdr = tonemap(img_)
-    print('alpha:', alpha, img.max(), img_.max(),img_hdr.max()**(1/2.4)-1)
-    # print('alpha:', alpha, img.max(), img_.max(),img_hdr.max())
-
-    file_name = 'out_test4/'+img_path.split('/')[-1]
-    print('file_name:',file_name)
-    # imsave(file_name, np.clip(img_hdr**(1/2.4)-1,0,100))
-    imsave(file_name, np.clip(img_hdr-1,0,100))
+        file_name = img_path.replace('.exr','.jpg')
+        print('file_name:',file_name)
+        # imsave(file_name, np.clip(img_hdr**(1/2.4)-1,0,100))
+        # imsave(file_name, np.clip(img_hdr-1,0,100))
+        imsave(file_name,img)
 

@@ -22,6 +22,8 @@ from metrics import metric_main
 from torch_utils import training_stats
 from torch_utils import custom_ops
 
+os.environ["CUDA_VISIBLE_DEVICES"] = '6'#当前空闲的GPU
+
 #----------------------------------------------------------------------------
 
 class UserError(Exception):
